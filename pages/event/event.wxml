@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-cells__title">记录点点滴滴</view>
+    <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input
+          class="weiui-input"
+          placeholder="标题" 
+          bindinput="updateTitle" 
+          value="{{title}}"/>
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea
+          class="weui-textarea"
+          placeholder="详情" 
+          bindinput="updateContent" 
+          value="{{content}}"/>
+      </view>
+    </view>
+    </view>
+    <view class="weui-btn-area">
+    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"  ontap="addTodo"> 添加 </button>
+    </view>
+  </view>
+</view>
