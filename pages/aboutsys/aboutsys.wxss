@@ -1,0 +1,6 @@
+/* pages/delesth/delesth.wxss */
+.text{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}

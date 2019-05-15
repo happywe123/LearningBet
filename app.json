@@ -3,7 +3,10 @@
     "pages/home/home",
     "pages/todos/todos",
     "pages/event/event",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/userinfo/userinfo",
+    "pages/mysth/mysth",
+    "pages/aboutsys/aboutsys"
   ],
   "window": {
     "enablePullDownRefresh": true,

@@ -7,6 +7,21 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  mysth: function () {
+    wx.navigateTo({
+      url: '/pages/mysth/mysth',
+    })
+  },
+  delesth: function () {
+    wx.navigateTo({
+      url: '/pages/aboutsys/aboutsys',
+    })
+  },
+  userinfo : function () {
+    wx.navigateTo({
+      url: '/pages/userinfo/userinfo',
+    })
+  },
   //事件处理函数
   bindViewTap: function () {
   },

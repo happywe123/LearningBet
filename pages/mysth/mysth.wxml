@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
+        <view class="kind-list__item">
+          <view 
+            class="weui-media-box weui-media-box_text" 
+            wx:if="{{todo.objectId != editedTodo.objectId}}"
+            data-id="{{todo.objectId}}">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{todo.title}}</view>
+            <view class="weui-media-box__desc">{{todo.content}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>
+            </view>
+
+          <view class="delete"  bindtap='deleteInfo'>删除</view> 
+            
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

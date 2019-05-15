@@ -17,12 +17,15 @@ Page({
       )
       .then(user => (user ? user : AV.User.loginWithWeapp()));
   },
+
   fetchTags: function () {
     const user = AV.User.current();
   },
+
   onReady: function () {
     this.fetchTags.bind(this);
   },
+
   onUnload: function() {
   },
   setTodos: function(todos) {
@@ -33,6 +36,7 @@ Page({
     });
     return todos;
   },
+
   updateTitle: function({ detail: { value } }) {
     // Android 真机上会诡异地触发多次时 value 为空的事件
     if (!value) return;
@@ -47,6 +51,7 @@ Page({
       content: value
     });
   },
+
   addTodo: function() {
     var title = this.data.title && this.data.title.trim();
     var content = this.data.title && this.data.content;
@@ -54,9 +59,9 @@ Page({
       return;
     }
     var acl = new AV.ACL();
-    acl.setPublicReadAccess(false);
-    acl.setPublicWriteAccess(false);
-    acl.setReadAccess(AV.User.current(), true);
+    acl.setPublicReadAccess(true);
+    //acl.setPublicWriteAccess(false);
+    //acl.setReadAccess(AV.User.current(), true);
     acl.setWriteAccess(AV.User.current(), true);
     new Todo({
       title: title,
@@ -76,6 +81,7 @@ Page({
       draft: ''
     });
   },
+  
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
   }

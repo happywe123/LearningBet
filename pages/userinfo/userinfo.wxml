@@ -1,0 +1,50 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="container">
+<view class="page__bd">
+
+  <view class="weui-cells weui-cells_after-title">
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <label>年龄： </label>
+        <input
+          class="text1"
+          bindinput="updatext1" 
+          value="{{title1}}"
+          />
+      </view>
+    </view>
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <label >性格： </label>
+        <input
+          class="text2" 
+          bindinput="updatext2" 
+          value="{{title2}}"
+          />
+      </view>
+    </view>
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <label>爱好： </label>
+        <input
+          class="text3"
+          bindinput="updatext3" 
+          value="{{title3}}"
+          />
+      </view>
+    </view>
+
+  </view>
+
+  <view>
+    <view class="weui-btn-area">
+        <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"  ontap="addTodo"> 保存</button>
+    </view>
+  </view>
+
+</view>
+</view>

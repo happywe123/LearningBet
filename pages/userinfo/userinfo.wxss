@@ -1,0 +1,5 @@
+/* pages/userinfo/userinfo.wxss */
+.weui-cell__bd{
+  margin-top: 20px;
+  display: flex;
+}

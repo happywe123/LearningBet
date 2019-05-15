@@ -1,7 +1,25 @@
 <view class="container">
+
+
+<view class="weui-search-bar">  
+ <view class="weui-search-bar__form">      
+  <view class="weui-search-bar__box">          
+   <icon class="weui-icon-search_in-box" type="search" size="14"></icon>          
+    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{wxSearchData.value}}"                 bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur"  />
+
+   <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">              
+    <icon type="clear" size="14"></icon>         
+   </view>   
+      
+  </view> 
+ </view> 
+</view>
+
   <view class="page__bd page__bd_spacing">
     <view class="kind-list">
+
       <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
+      
         <view class="kind-list__item">
           <view 
             class="weui-media-box weui-media-box_text" 
@@ -11,9 +29,14 @@
             <view class="weui-media-box__desc">{{todo.content}}</view>
             <view class="weui-media-box__info">
               <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>
+
+               <image class='love' wx:if="{{collection}}"  src="/images/love1.png"  bindtap='toCollect'></image>
+               <image class='love' wx:else src="/images/love2.png" bindtap='toCollect'></image>
             </view>
+         
           </view>
         </view>
+
       </block>
     </view>
   </view>
