@@ -44,8 +44,11 @@ Page({
   },
 
   onUnload: function () {
-    this.subscription.unsubscribe();
-    this.unbind();
+    if (getCurrentPages().length == 3) {
+      wx.navigateBack({
+        delta: 1
+      })
+    }
   },
 
   onPullDownRefresh: function () {
@@ -64,5 +67,20 @@ Page({
 
   showTodo: function ({ target: { dataset: { id } } }) {
     console.log('show todo');
-  }
+  },
+  
+  //打卡记录删除
+  deleteInfo: function (event) {
+    console.log(event.currentTarget.dataset.total)
+    var objectid = event.currentTarget.dataset.total;
+    const user = AV.User.current()
+    console.log(event.currentTarget.dataset.index);
+    var todo = AV.Object.createWithoutData('Todo', objectid);
+    todo.destroy().then(function (success) {
+      // 删除成功
+    }, function (error) {
+      // 删除失败
+    });
+  },
+
 });

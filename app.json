@@ -6,7 +6,11 @@
     "pages/user/user",
     "pages/userinfo/userinfo",
     "pages/mysth/mysth",
-    "pages/aboutsys/aboutsys"
+    "pages/aboutsys/aboutsys",
+    "pages/help/help",
+    "pages/aboutus/aboutus",
+    "pages/aboutapp/aboutapp",
+    "pages/search/search"
   ],
   "window": {
     "enablePullDownRefresh": true,

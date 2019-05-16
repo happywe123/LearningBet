@@ -4,7 +4,21 @@ const bind = require('../../utils/live-query-binding');
 
 Page({
   data: {
-    todos: []
+    todos: [],
+      inputVal: '',
+
+    msgData: [
+
+      { msg: '88888888888' }
+
+    ]
+
+  },
+
+  button: function () {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   },
 
 //-----a张家豪的爱心
@@ -72,11 +86,26 @@ Page({
       .then(user => (user ? user : AV.User.loginWithWeapp()));
   },
 
-  fetchTodos: function(user) {
+  fetchTodos: function (user) {
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // 找出包含 「bug」 的 Todo
+    // var query = new AV.Query(Todo);
+    // query.startsWith('ACL', '早餐');
+    // var query = new AV.Query('Todo');
+    // query.includeACL(true);
+    // query.find().then(function (todos) {
+    //    console.log(user.ACL)
+    // }).catch(function (error) {
+
+    // })
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const query = new AV.Query(Todo)
-      .equalTo('user', AV.Object.createWithoutData('User', user.id))
+      // .equalTo('user', AV.Object.createWithoutData('User', user.id))
       .descending('createdAt');
     const setTodos = this.setTodos.bind(this);
+    // console.log("当前用户Id:" + user.id)
+
     return AV.Promise.all([
       query.find().then(setTodos),
       query.subscribe()
@@ -86,6 +115,7 @@ Page({
       this.unbind = bind(subscription, todos, setTodos);
     });
   },
+
 
   onReady: function() {
   },
@@ -119,6 +149,148 @@ Page({
   showTodo: function({ target: { dataset: { id } } }) {
     console.log('show todo');
   },
+
+
+//--------------评论-------------------------
+
+  // 删除留言
+
+  del(e) {
+
+    var that = this
+
+    var n = e.target.dataset.index;
+
+    var list = that.data.msgData
+
+    wx.showModal({
+
+      title: '提示',
+
+      content: '是否删除该条数据',
+
+      success: function (res) {
+
+        console.log(res.confirm)
+
+        if (res.confirm) {
+
+          list.splice(n, 1);
+
+          that.setData({
+
+            msgData: list
+
+          })
+
+          wx.showToast({
+
+            title: '删除成功',
+
+          })
+
+        }
+
+
+
+      }
+
+    })
+
+
+
+  },
+
+  // 添加留言
+
+  add(e) {
+
+    if (this.data.inputVal == '') {
+
+      wx.showToast({
+
+        title: '请留言',
+
+      })
+
+      return false;
+
+    }
+
+    var list = this.data.msgData;
+
+    var a = list ? list : []
+
+    a.push({
+
+      msg: this.data.inputVal
+
+    })
+
+    wx.setStorage({
+
+      key: 'info',
+
+      data: a,
+
+    })
+
+    this.setData({
+
+      msgData: a,
+
+      inputVal: ''
+
+    })
+
+  },
+
+  changeinputVal(e) {
+
+    this.setData({
+
+      inputVal: e.detail.value
+
+    })
+
+  },
+
+  onLoad: function () {
+
+    var that = this;
+
+    wx.getStorage({
+
+      key: 'info',
+
+      success: function (res) {
+
+        //msgData还是空的
+
+        var list = that.data.msgData;
+
+        var a = list ? list : []
+
+        var apple = res.data
+
+        //将数据加入到msgData
+
+        a = apple
+
+        that.setData({
+
+          msgData: a
+
+        })
+
+      }
+
+    })
+
+  },
+
+
+
 });
 
 

@@ -1,0 +1,16 @@
+<!--pages/aboutapp/aboutapp.wxml-->
+
+<view class="container">
+  <view class="page__hd">
+    <view class="page__title">关于产品</view>
+    <text class="page__desc"> 
+      锻炼枯燥无味，没法坚持？
+      我来给你找一起锻炼的人。
+      读书感悟没人分享？
+      我来给你找书友。
+      爱好小众，没人一起玩耍？
+      我来给你找志趣相投的人。
+    </text>
+ 
+  </view>
+</view>

@@ -1,19 +1,12 @@
 <view class="container">
 
-
 <view class="weui-search-bar">  
  <view class="weui-search-bar__form">      
-  <view class="weui-search-bar__box">          
-   <icon class="weui-icon-search_in-box" type="search" size="14"></icon>          
-    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{wxSearchData.value}}"                 bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur"  />
-
-   <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">              
-    <icon type="clear" size="14"></icon>         
-   </view>   
-      
-  </view> 
+  <!-- <view class="weui-search-bar__box">   -->
+<button class="but" bindtap='button'>搜索</button>  
  </view> 
 </view>
+
 
   <view class="page__bd page__bd_spacing">
     <view class="kind-list">
@@ -32,7 +25,42 @@
 
                <image class='love' wx:if="{{collection}}"  src="/images/love1.png"  bindtap='toCollect'></image>
                <image class='love' wx:else src="/images/love2.png" bindtap='toCollect'></image>
+
+              <!-- 留言--------------------------------- -->
+
+  <view class='msg_box'>
+
+     <view class='send_box'>
+
+        <input value='{{inputVal}}' bindinput='changeinputVal' class='input' type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
+
+        <button class='button' type='primary' bindtap='add'>留言</button>
+
+     </view>
+
+     <view class='tip' wx:if='{{msgData.length==0}}'>暂无留言...^_^...</view>
+
+     <!-- 留言列表--------------------------- -->
+
+     <view class='msgnav'>
+
+        <view class='msglist' wx:for="{{msgData}}" wx:key="{{index}}">
+
+           <text class='msg'>{{item.msg}}</text>
+
+           <icon data-index='{{index}}' bindtap='del' class='icon' type='cancel'></icon>
+
+        </view>
+
+     </view>
+
+  </view>
+
+
+
             </view>
+
+
          
           </view>
         </view>

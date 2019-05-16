@@ -42,7 +42,7 @@
   <view>
     <view class="weui-btn-area">
         <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="primary"  ontap="addTodo"> 保存</button>
+        disabled="{{disabled}}" bindtap="primary"  ontap="addPim"> 保存</button>
     </view>
   </view>
 

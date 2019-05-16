@@ -52,7 +52,7 @@ Page({
     });
   },
 
-  addTodo: function() {
+  addTodo: function () {
     var title = this.data.title && this.data.title.trim();
     var content = this.data.title && this.data.content;
     if (!title || !content) {
@@ -60,8 +60,8 @@ Page({
     }
     var acl = new AV.ACL();
     acl.setPublicReadAccess(true);
-    //acl.setPublicWriteAccess(false);
-    //acl.setReadAccess(AV.User.current(), true);
+    // acl.setPublicWriteAccess(false);
+    // acl.setReadAccess(AV.User.current(), true);
     acl.setWriteAccess(AV.User.current(), true);
     new Todo({
       title: title,
@@ -81,7 +81,7 @@ Page({
       draft: ''
     });
   },
-  
+
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
   }

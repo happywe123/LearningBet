@@ -1,2 +1,6 @@
 <!--pages/delesth/delesth.wxml-->
-<text class='text'>该事件暂无功能</text>
+<view class="container">
+  <button class='userb1' type='default' bindtap='help' style="width: 270px;height: 45px;color: black">帮助与反馈 </button>
+  <button class='userb2' type='default' bindtap='aboutus' style="width: 270px;height: 45px;color: black">设计人员</button>
+  <button class='userb3' type='default' bindtap='aboutapp' style="width: 270px;height: 45px;color: black">关于 LearningBet</button>
+</view>

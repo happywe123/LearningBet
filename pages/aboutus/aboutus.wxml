@@ -1,0 +1,14 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class="container">
+  <view class="page__hd">
+    <view class="page__title">关于我们</view>
+    <text class="page__desc"> 
+     张秋月:
+     张佳豪:
+     李春环:
+     涂大威:
+    </text>
+ 
+  </view>
+</view>
+

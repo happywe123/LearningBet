@@ -13,7 +13,7 @@
               <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>
             </view>
 
-          <view class="delete"  bindtap='deleteInfo'>删除</view> 
+          <view class="delete"  bindtap='deleteInfo' data-total='{{todo.objectId}}'>删除</view>  
             
           </view>
         </view>

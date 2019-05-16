@@ -1,6 +1,16 @@
 /* pages/delesth/delesth.wxss */
-.text{
-   display: flex;
-  align-items: center;
-  justify-content: center;
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.userb1{
+  margin-top: 40px;
+}
+.userb2{
+  margin-top: 5px;
+}
+
+.userb3{
+  margin-top: 5px;
 }

@@ -1,0 +1,8 @@
+/* pages/aboutapp/aboutapp.wxss */
+
+.text2{
+    text-align:center;
+    text-align:justify;
+    color: #808080 ;
+    word-spacing:30px; 
+}

@@ -1,0 +1,9 @@
+/* pages/search/search.wxss */
+/* .bg_pink{
+  text-align: center;
+   opacity: 0.9;
+   transform: scale(0.9,0.9);
+ } */
+
+ /* wesearch */
+ @import "/wxSearch/wxSearch.wxss";

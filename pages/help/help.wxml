@@ -1,0 +1,13 @@
+<!--pages/help/help.wxml-->
+<view class="container">
+  <view class="page__hd">
+    <view class="page__title">寻找帮助</view>
+    <text class="page__desc"> 
+      如果在使用过程中，遇到什么问题
+      或者说有什么疑问，欢迎邮件讨论！
+      邮箱地址：741736214@qq.com
+    </text>
+ 
+  </view>
+</view>
+
