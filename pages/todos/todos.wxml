@@ -3,7 +3,7 @@
 <view class="weui-search-bar">  
  <view class="weui-search-bar__form">      
   <!-- <view class="weui-search-bar__box">   -->
-<button class="but" bindtap='button'>搜索</button>  
+<button class="but" bindtap='button' data-trans="{{todos}}">搜索</button>  
  </view> 
 </view>
 
@@ -30,8 +30,16 @@
               <view class='msg_box'>
 
                  <view class='send_box'>
-                      <image class='love' wx:if="{{collection}}"  src="/images/love2.png"  bindtap='toCollect'></image>
-               <image class='love' wx:else src="/images/love1.png" bindtap='toCollect'></image>
+
+                  <!-- <view class="love" > -->
+             <image wx:if="{{todo.flag}}" src="/images/love2.png"   bindtap='setlove' class="love" data-id="{{todo.objectId}}" data-flag="{{todo.flag}}"></image>
+            <image  wx:else src="/images/love1.png" bindtap='setlove'  class="love"  data-id="{{todo.objectId}}"  
+            data-flag="{{todo.flag}}"></image>
+            <!-- </view> -->
+
+
+
+
                     <input value='{{inputVal}}' bindinput='changeinputVal' class='input' type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
                      <button class='button'  type='default' bindtap='add'>留言</button>
                    

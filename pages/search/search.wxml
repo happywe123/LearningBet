@@ -1,28 +1,69 @@
-<!-- <view class="weui-search-bar">  
- <view class="weui-search-bar__form">      
-  <view class="weui-search-bar__box">          
-   <icon class="weui-icon-search_in-box" type="search" size="14"></icon>          
-    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{wxSearchData.value}}"                 bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur"  />   
-  </view>    
- </view> 
- 
-  <view class="seci" hover-class='bg_pink' bindtap=''>搜索</view>
 
-</view>  -->
+<view class="container">
+  <view class="weui-search-bar">  
+    <!-- <view class="weui-search-bar__form">       -->
+      <input class="input" name="keyTitle" placeholder="搜索想加入的团"  bindinput ="keyInput"  data-trans="{{todos}}"  value="{{wxSearchData.value}}" bindblur="wxSearchBlur" bindfocus='wxSerchFocus'/> 
+      <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+    </view>
+  <!-- <iew>  -->
+</view>
 
-
-
-<!-- wesearch -->
-
-
-<import src="/wxSearch/wxSearch.wxml"/>
-
-<view class="wxSearch-section">
-  <view class="wxSearch-pancel">
-  
-   <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
-    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+<view class="page__bd page__bd_spacing">
+  <view class="kind-list">
+    <block wx:for="{{a}}" wx:for-item="todo" wx:key="objectId">    
+      <view class="kind-list__item">
+        <view 
+            class="weui-media-box weui-media-box_text" 
+            wx:if="{{todo.objectId != editedTodo.objectId}}"
+            data-id="{{todo.objectId}}">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{todo.title}}</view>
+            <view class="weui-media-box__desc">{{todo.content}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>             
+            </view>  
+        </view>
+      </view>
+    </block>
   </view>
 </view>
-<template is="wxSearch" data="{{wxSearchData}}"/>
+
+<template is="wxSearch" data="{{wxSearchData}}"/> 
+<template name="wxSearch">
+  <view class="wxSearch" bindtap="wxSearchTap"  style="display:{{wxSearchData.view.isShow ? 'block':'none'}};height:{{wxSearchData.view.seachHeight}}px;top:{{wxSearchData.view.barHeight}}px;">
+    <view  class="wxSearchInner">
+
+        <view class="wxSearchMindKey">
+            <view class="wxSearchMindKeyList">
+                <block wx:for="{{wxSearchData.mindKeys}}">
+                    <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+                </block>
+            </view>
+        </view>
+
+        <view class="wxSearchKey" style="display:{{wxSearchData.view.isShowSearchKey ? 'block':'none'}}">
+            <text class="wxSearchTitle">热门搜索</text>
+            <view class="wxSearchKeyList">
+                <block wx:for="{{wxSearchData.keys}}">
+                    <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="wxSearchHistory" style="display:{{wxSearchData.view.isShowSearchHistory ? 'block':'none'}}">
+            <text class="wxSearchTitle">搜索历史</text>
+            <view wx:if="{{wxSearchData.his[0]}}" class="wxSearchHistoryList">
+                <block wx:for="{{wxSearchData.his}}">
+                    <view class="wxSearchHistoryItem">
+                        <text class="wxSearchHistoryItemText" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</text> 
+                        <text class="wxSearchHistoryItemDel" bindtap="wxSearchDeleteKey" data-key="{{item}}" data-key="{{item}}">删除</text>
+                    </view>
+                </block>
+                <view class="wxSearchDeleteAllBtn" bindtap="wxSearchDeleteAll">清除历史</view>
+            </view>
+            <view wx:else>
+                <view class="wxSearchHistoryEmpty">搜索历史为空</view>
+            </view>
+        </view>
+    </view>
+  </view>
+</template>
 

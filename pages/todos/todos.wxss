@@ -8,8 +8,8 @@
 .love{
   margin-top: 20px;
   /* margin-left: 230px; */
-  width: 52rpx;
-  height: 52rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .weui-media-box__desc{
