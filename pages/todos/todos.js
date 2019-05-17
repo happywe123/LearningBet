@@ -35,9 +35,9 @@ Page({
       }
     }
 
-    for (var n = 0; n < b.length; n++) {
-      console.log("+++++++++++++++++++" + b[n].title)
-    }
+   // for (var n = 0; n < b.length; n++) {
+    //  console.log("+++++++++++++++++++" + b[n].title)
+   // }
 
     // for (var n=0;n<b.length-1;n++){
     //   for (var j = 0; j < b.length ; j++)
@@ -65,7 +65,7 @@ Page({
       url: '/pages/search/search?skip=' + JSON.stringify(trans)
     })
     for (var n = 0; n < trans.length; n++) {
-      console.log("第一个界面的值" + trans[n].title)
+      //console.log("第一个界面的值" + trans[n].title)
     }
   },
 
@@ -77,16 +77,16 @@ Page({
     var flag = e.currentTarget.dataset.flag;
 
     flag = !flag;
-    console.log(flag);
+   // console.log(flag);
     const user = AV.User.current()
-    console.log(user.id)
-    console.log(e.currentTarget.dataset.index);
+   // console.log(user.id)
+   // console.log(e.currentTarget.dataset.index);
     var todo = AV.Object.createWithoutData('Todo', objectId);
     todo.set('flag', flag);
     todo.save().then(function (todo) {
-      console.log("ok!")
+     // console.log("ok!")
     });
-    console.log("表示:" + objectId + "flag:" + flag)
+   // console.log("表示:" + objectId + "flag:" + flag)
 
     this.setData({
       f: flag
@@ -164,12 +164,12 @@ Page({
     this.setData({
       todos
     });
-    console.log(todos.length)
+   // console.log(todos.length)
     return todos;
   },
   
   showTodo: function({ target: { dataset: { id } } }) {
-    console.log('show todo');
+   // console.log('show todo');
   },
 
 
@@ -200,13 +200,11 @@ del(e) {
   },
 
   // 添加留言
-
   add(e) {
     if (this.data.inputVal == '') {
       wx.showToast({
         title: '请留言',
       })
-
       return false;
     }
     var list = this.data.msgData;
@@ -249,9 +247,6 @@ del(e) {
       }
     })
   },
-
-
-
 });
 
 

@@ -1,11 +1,16 @@
 
+
+
+
+<!-- <import src="/wxSearch/wxSearch.wxml"/> -->
+
 <view class="container">
   <view class="weui-search-bar">  
     <!-- <view class="weui-search-bar__form">       -->
       <input class="input" name="keyTitle" placeholder="搜索想加入的团"  bindinput ="keyInput"  data-trans="{{todos}}"  value="{{wxSearchData.value}}" bindblur="wxSearchBlur" bindfocus='wxSerchFocus'/> 
-      <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+      <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true" data-trans='{{todos}}'>搜索</button>
     </view>
-  <!-- <iew>  -->
+  <!-- </view>  -->
 </view>
 
 <view class="page__bd page__bd_spacing">
@@ -44,7 +49,8 @@
             <text class="wxSearchTitle">热门搜索</text>
             <view class="wxSearchKeyList">
                 <block wx:for="{{wxSearchData.keys}}">
-                    <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+                    <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}" data-transto="{{item}}" data-trans='{{todos}}'>{{item}}</view>
+                  
                 </block>
             </view>
         </view>
@@ -66,4 +72,7 @@
     </view>
   </view>
 </template>
+
+
+
 
