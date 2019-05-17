@@ -17,6 +17,13 @@ Page({
       url: '/pages/aboutsys/aboutsys',
     })
   },
+
+  studytime: function () {
+    wx.navigateTo({
+      url: '/pages/studytime/studytime',
+    })
+  },
+
   userinfo : function () {
     wx.navigateTo({
       url: '/pages/userinfo/userinfo',

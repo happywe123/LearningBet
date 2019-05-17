@@ -10,7 +10,8 @@
     "pages/help/help",
     "pages/aboutus/aboutus",
     "pages/aboutapp/aboutapp",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/studytime/studytime"
   ],
   "window": {
     "enablePullDownRefresh": true,

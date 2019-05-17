@@ -31,6 +31,10 @@
   margin-top: 5px;
 }
 
+.userb4{
+  margin-top: 5px;
+}
+
 
 .money{
   display: flex ;

@@ -8,7 +8,7 @@
 </view>
   <view class="page__bd page__bd_spacing">
     <navigator url="../event/event">
-      <button class="weui-btn" type="default">记录成长的点滴</button>
+      <button class="weui-btn" type="default">发布动态团</button>
     </navigator>
   </view>
   <view class="page__bd page__bd_spacing">

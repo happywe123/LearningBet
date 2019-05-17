@@ -109,7 +109,7 @@ Page({
     console.log('onLoad')
     var that = this
     //初始化的时候渲染wxSearchdata
-    WxSearch.init(that, 43, ['z', '英语', '健身', '读书', '打卡', '编程']);
+    WxSearch.init(that, 43, ['跑步', '英语', '健身', '读书', '打卡', '编程']);
     WxSearch.initMindKeys(['weappdev.com', '微信小程序开发', '微信开发', '微信小程序']);
 
     var haha = JSON.parse(options.skip)
