@@ -21,7 +21,7 @@
 }
 
 .userb1{
-  margin-top: 40px;
+  margin-top: 5px;
 }
 .userb2{
   margin-top: 5px;
@@ -29,5 +29,23 @@
 
 .userb3{
   margin-top: 5px;
+}
+
+
+.money{
+  display: flex ;
+  flex-direction: row
+}
+
+ .text1{
+  /* margin-top: 40px; */
+  /* flex-direction: column; */
+  margin-left: 100px
+} 
+.coin{
+  margin-right: 100px;
+  margin-top: 3px;
+  width: 120rpx;
+  height: 50rpx;
 }
 

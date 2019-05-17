@@ -9,6 +9,11 @@
 </view>
 
 <view>
+ <view class='money'>
+    <view class='text1' type='default'  style="width: 270px;height: 45px;color: black">用户金币:100</view>
+    <image class='coin'src='/images/coin.png'></image>
+</view>
+  
   <button class='userb1' type='default' bindtap='userinfo' style="width: 270px;height: 45px;color: black">用户信息</button>
   <button class='userb2' type='default' bindtap='mysth' style="width: 270px;height: 45px;color: black">我开的团</button>
   <button class='userb3' type='default' bindtap='delesth' style="width: 270px;height: 45px;color: black">系统设置</button>

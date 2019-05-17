@@ -23,45 +23,30 @@
             <view class="weui-media-box__info">
               <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>
 
-               <image class='love' wx:if="{{collection}}"  src="/images/love1.png"  bindtap='toCollect'></image>
-               <image class='love' wx:else src="/images/love2.png" bindtap='toCollect'></image>
+               
 
               <!-- 留言--------------------------------- -->
 
-  <view class='msg_box'>
+              <view class='msg_box'>
 
-     <view class='send_box'>
+                 <view class='send_box'>
+                      <image class='love' wx:if="{{collection}}"  src="/images/love2.png"  bindtap='toCollect'></image>
+               <image class='love' wx:else src="/images/love1.png" bindtap='toCollect'></image>
+                    <input value='{{inputVal}}' bindinput='changeinputVal' class='input' type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
+                     <button class='button'  type='default' bindtap='add'>留言</button>
+                   
+                  </view>
+                <view class='tip' wx:if='{{msgData.length==0}}'>暂无留言...^_^...</view>
 
-        <input value='{{inputVal}}' bindinput='changeinputVal' class='input' type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
-
-        <button class='button' type='primary' bindtap='add'>留言</button>
-
-     </view>
-
-     <view class='tip' wx:if='{{msgData.length==0}}'>暂无留言...^_^...</view>
-
-     <!-- 留言列表--------------------------- -->
-
-     <view class='msgnav'>
-
-        <view class='msglist' wx:for="{{msgData}}" wx:key="{{index}}">
-
-           <text class='msg'>{{item.msg}}</text>
-
-           <icon data-index='{{index}}' bindtap='del' class='icon' type='cancel'></icon>
-
-        </view>
-
-     </view>
-
-  </view>
-
-
-
+               <!-- 留言列表--------------------------- -->
+              <view class='msgnav'>
+                <view class='msglist' wx:for="{{msgData}}" wx:key="{{index}}">
+                  <text class='msg'>{{item.msg}}</text>
+                   <icon data-index='{{index}}' bindtap='del' class='icon' type='cancel'></icon>
+                </view>
+              </view>
+             </view>
             </view>
-
-
-         
           </view>
         </view>
 

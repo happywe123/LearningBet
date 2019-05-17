@@ -5,14 +5,10 @@ const bind = require('../../utils/live-query-binding');
 Page({
   data: {
     todos: [],
-      inputVal: '',
-
+    inputVal: '',
     msgData: [
-
       { msg: '88888888888' }
-
     ]
-
   },
 
   button: function () {
@@ -21,7 +17,7 @@ Page({
     })
   },
 
-//-----a张家豪的爱心
+//-----张家豪的爱心--------------------
   onLoad: function (option) {
     // 获取接收到的id值
     var getId = option.id;
@@ -67,7 +63,7 @@ Page({
     });
     // 交互反馈
     wx.showToast({
-      title: currentCache ? '取消' : '点赞',
+      title: currentCache ? '点赞' : '取消',
       icon: 'success',
       duration: 2000
     });
@@ -116,7 +112,6 @@ Page({
     });
   },
 
-
   onReady: function() {
   },
 
@@ -152,141 +147,80 @@ Page({
 
 
 //--------------评论-------------------------
+// 删除留言
 
-  // 删除留言
-
-  del(e) {
-
-    var that = this
-
-    var n = e.target.dataset.index;
-
-    var list = that.data.msgData
-
+del(e) {
+  var that = this
+  var n = e.target.dataset.index;
+   var list = that.data.msgData;
+   
     wx.showModal({
-
       title: '提示',
-
       content: '是否删除该条数据',
-
       success: function (res) {
-
         console.log(res.confirm)
-
         if (res.confirm) {
-
           list.splice(n, 1);
-
           that.setData({
-
             msgData: list
-
           })
-
           wx.showToast({
-
             title: '删除成功',
-
           })
-
         }
-
-
-
       }
-
     })
-
-
-
   },
 
   // 添加留言
 
   add(e) {
-
     if (this.data.inputVal == '') {
-
       wx.showToast({
-
         title: '请留言',
-
       })
 
       return false;
-
     }
-
     var list = this.data.msgData;
-
     var a = list ? list : []
-
     a.push({
-
       msg: this.data.inputVal
-
     })
 
     wx.setStorage({
-
       key: 'info',
-
       data: a,
-
     })
 
     this.setData({
-
       msgData: a,
-
       inputVal: ''
-
     })
-
   },
 
   changeinputVal(e) {
-
     this.setData({
-
       inputVal: e.detail.value
-
     })
-
   },
 
   onLoad: function () {
-
     var that = this;
-
     wx.getStorage({
-
       key: 'info',
-
       success: function (res) {
-
         //msgData还是空的
-
         var list = that.data.msgData;
-
         var a = list ? list : []
-
         var apple = res.data
-
         //将数据加入到msgData
-
         a = apple
-
         that.setData({
-
           msgData: a
-
         })
-
       }
-
     })
-
   },
 
 

@@ -7,6 +7,7 @@ Page({
     title: '',
     content: ''
   },
+
   login: function () {
     return AV.Promise.resolve(AV.User.current())
       .then(
@@ -28,6 +29,7 @@ Page({
 
   onUnload: function() {
   },
+
   setTodos: function(todos) {
     const activeTodos = todos.filter(todo => !todo.done);
     this.setData({
@@ -44,6 +46,7 @@ Page({
       title: value
     });
   },
+
   updateContent: function({ detail: { value } }) {
     // Android 真机上会诡异地触发多次时 value 为空的事件
     if (!value) return;
@@ -63,20 +66,21 @@ Page({
     // acl.setPublicWriteAccess(false);
     // acl.setReadAccess(AV.User.current(), true);
     acl.setWriteAccess(AV.User.current(), true);
+
     new Todo({
       title: title,
       content: content,
       done: false,
       user: AV.User.current()
     })
-      .setACL(acl)
-      .save()
-      .then(todo => {
-        wx.switchTab({
-          url: '../home/home'
-        })
-      })
-      .catch(console.error);
+    .setACL(acl)
+    .save()
+    .then(todo => {
+    wx.switchTab({
+    url: '../home/home'
+     })
+    })
+    .catch(console.error);
     this.setData({
       draft: ''
     });
