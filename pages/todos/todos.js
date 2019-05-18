@@ -110,19 +110,6 @@ Page({
   },
 
   fetchTodos: function (user) {
-
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // 找出包含 「bug」 的 Todo
-    // var query = new AV.Query(Todo);
-    // query.startsWith('ACL', '早餐');
-    // var query = new AV.Query('Todo');
-    // query.includeACL(true);
-    // query.find().then(function (todos) {
-    //    console.log(user.ACL)
-    // }).catch(function (error) {
-
-    // })
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const query = new AV.Query(Todo)
       // .equalTo('user', AV.Object.createWithoutData('User', user.id))
       .descending('createdAt');
@@ -170,6 +157,29 @@ Page({
   
   showTodo: function({ target: { dataset: { id } } }) {
    // console.log('show todo');
+  },
+
+
+
+
+  onItemClick: function (e) {
+    var todo = e.currentTarget.dataset.topicid;
+    var todocopy = []
+    todocopy[0] = todo.objectId
+    todocopy[1] = todo.title
+    todocopy[2] = todo.content
+    todocopy[3] = todo.flag
+    todocopy[4] = todo.updatedAt
+    todocopy[5] = todo.tempFilePaths
+
+    // console.log("数组传值测试:数组传值测试数组传值测试数组传值测试")
+    // for(var i=0;i<5;i++){
+    //   console.log(todocopy[i])
+    // }
+
+    wx.navigateTo({
+      url: '/pages/todos_detail/todos_detail?skipcontentall=' + JSON.stringify(todocopy)
+    })
   },
 
 
@@ -247,6 +257,7 @@ del(e) {
       }
     })
   },
+
 });
 
 

@@ -52,7 +52,9 @@ Page({
   showTodo: function ({ target: { dataset: { id } } }) {
     // TODO:
   },
+
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
   }
+  
 });

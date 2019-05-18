@@ -26,8 +26,11 @@
     </view>
 
     <view class="weui-btn-area">
-    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="primary"  ontap="addTodo"> 添加 </button>
+      <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 300rpx"/>
+      <button class = "btn1" type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="chooseimage"> 选择图片</button> 
+    <button  class= "btn" type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"  ontap="addTodo"> 发布动态 </button>
     </view>
   </view>
   

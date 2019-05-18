@@ -11,7 +11,9 @@
     "pages/aboutus/aboutus",
     "pages/aboutapp/aboutapp",
     "pages/search/search",
-    "pages/studytime/studytime"
+    "pages/studytime/studytime",
+    "pages/todos_detail/todos_detail",
+    "pages/chatroom/chatroom"
   ],
   "window": {
     "enablePullDownRefresh": true,
@@ -25,13 +27,13 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "打卡",
+        "text": "发布",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-selected.png"
       },
       {
         "pagePath": "pages/todos/todos",
-        "text": "记录",
+        "text": "广场",
         "iconPath": "images/order-fill.png",
         "selectedIconPath": "images/order-fill-selected.png"
       },

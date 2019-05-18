@@ -1,0 +1,14 @@
+
+<view class='news'>
+  <view class='xiahuaxian1 xiahuaxia'></view>
+  <view class='new_top_txt'>欢迎加入 {{grouptitle}} 团</view>
+</view>
+
+<view class="sendmessage">
+  <image  src="/images/voice.png" class="voice"  ></image>
+ 
+  <input type="emoji" bindinput="bindChange" confirm-type="done" value='{{news_input_val}}' placeholder="" />
+  <button catchtap="add">发送</button>
+   <image  src="/images/plus.png" class=" plus"></image>
+</view>
+

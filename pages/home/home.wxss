@@ -8,11 +8,10 @@
 .lunbo{
   width: 75%;
   height: 230px; 
-
 }    
 
 .lb{
-    display: flex;/* 如果把盒子设置为弹性盒子,必须要加的 */
+    display: flex;   /* 如果把盒子设置为弹性盒子,必须要加的 */
   flex-direction: column;/* 设置一个大盒子内容垂直排列*/
   align-items: center;/* 设置一个大盒子内容居中排列*/
 }

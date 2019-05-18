@@ -1,0 +1,157 @@
+/* pages/todos_detail/todos_detail.wxss *//*!
+ * WeUI v1.1.1 (https://github.com/weui/weui-wxss)
+ * Copyright 2017 Tencent, Inc.
+ * Licensed under the MIT license
+ */
+.weui-flex{-webkit-box-align:center;-webkit-align-items:center;align-items:center}.weui-cells{margin-top:0;opacity:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:.3s;transition:.3s}.weui-cells:after,.weui-cells:before{display:none}.weui-cells_show{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}.weui-cell:before{right:15px}.kind-list__item{margin:10px 0;background-color:#fff;border-radius:2px;overflow:hidden}.kind-list__item:first-child{margin-top:0}.kind-list__img{width:30px;height:30px}.kind-list__item-hd{padding:20px;-webkit-transition:opacity .3s;transition:opacity .3s}.kind-list__item-hd_show{opacity:.4}.kind-list__item-bd{height:0;overflow:hidden}.kind-list__item-bd_show{height:auto}
+
+
+
+.weui-media-box__desc{
+  
+ display: -webkit-box;
+
+ word-break: break-all;
+
+ text-overflow: ellipsis;
+
+ font-size: 28rpx;
+
+ overflow: hidden;
+
+ -webkit-box-orient: vertical;
+
+ -webkit-line-clamp:10;
+
+}
+
+.weui-media-box__desc{
+  
+ display: -webkit-box;
+
+ word-break: break-all;
+
+ text-overflow: ellipsis;
+
+ font-size: 28rpx;
+
+ overflow: hidden;
+
+ -webkit-box-orient: vertical;
+
+ -webkit-line-clamp:10;
+
+}
+
+
+
+.msg_box{
+
+  padding: 10px
+
+}
+
+.send_box{
+
+  display: flex;
+
+  width: 100%;
+
+  height: 50px
+
+}
+
+.love{
+  margin-top: 1px;
+  margin-left: px; 
+  width: 57rpx;
+  height: 57rpx;
+}
+
+.input{
+  margin-top:1px;
+  border: 1px solid #aaa;
+  margin-left:10px;
+  border-radius:5px;
+  width: 60%;
+  height: 50%
+}
+
+.button{
+  margin-top: 0px;
+  font-size: 13px !important;
+  width: 20%;
+  height: 59%;
+  margin-left: 10px;
+  line-height: 30px
+}
+
+.joinbutton{
+  margin-top: 0px;
+  font-size: 13px !important;
+  width: 20%;
+  height: 59%;
+  margin-left: 5px;
+  line-height: 30px
+}
+
+.pl_input{
+
+  color: #339999
+
+}
+
+.tip{
+ margin-top: 0;
+  font-size: 10px;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin: 10px 0 0 0;
+
+  color: #786666
+
+}
+
+.msgnav{
+
+  margin: 10px 0 0 0;
+
+}
+
+.msglist{
+
+  border-bottom: 1px dashed #aaa;
+
+  height: 30px;
+
+  line-height: 30px;
+
+  overflow: hidden;
+
+  margin: 10px 10px 0 0;
+
+}
+
+.msg{
+
+  float: left;
+  color: #786666
+
+}
+
+.icon{
+
+  float: right;
+
+  margin: 5px 0 0 0;
+
+}
+
+
+
+
+
+

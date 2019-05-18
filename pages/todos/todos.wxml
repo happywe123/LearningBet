@@ -1,52 +1,49 @@
 <view class="container">
 
-<view class="weui-search-bar">  
- <view class="weui-search-bar__form">      
-  <!-- <view class="weui-search-bar__box">   -->
-<button class="but" bindtap='button' data-trans="{{todos}}">搜索</button>  
- </view> 
-</view>
+  <view class="weui-search-bar">  
+   <view class="weui-search-bar__form">      
+      <button class="but" bindtap='button' data-trans="{{todos}}">搜索</button>  
+    </view> 
+  </view>
 
 
   <view class="page__bd page__bd_spacing">
     <view class="kind-list">
-
       <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
-      
-        <view class="kind-list__item">
+        <view class="kind-list__item" bindtap='onItemClick' data-topicid='{{todo}}'>
           <view 
             class="weui-media-box weui-media-box_text" 
             wx:if="{{todo.objectId != editedTodo.objectId}}"
             data-id="{{todo.objectId}}">
             <view class="weui-media-box__title weui-media-box__title_in-text">{{todo.title}}</view>
             <view class="weui-media-box__desc">{{todo.content}}</view>
+            <!-- <view>{{todo.tempFilePaths}}</view> -->
+            <!-- <image src="{{todo.tempFilePaths}}""></image> -->
             <view class="weui-media-box__info">
               <view class="weui-media-box__info__meta">{{todo.updatedAt}}</view>
+            </view>  
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>
 
                
-
-              <!-- 留言--------------------------------- -->
-
+<!--
               <view class='msg_box'>
-
                  <view class='send_box'>
-
-                  <!-- <view class="love" > -->
              <image wx:if="{{todo.flag}}" src="/images/love2.png"   bindtap='setlove' class="love" data-id="{{todo.objectId}}" data-flag="{{todo.flag}}"></image>
             <image  wx:else src="/images/love1.png" bindtap='setlove'  class="love"  data-id="{{todo.objectId}}"  
             data-flag="{{todo.flag}}"></image>
-            <!-- </view> -->
-
-
-
-
+            
                     <input value='{{inputVal}}' bindinput='changeinputVal' class='input' type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
                      <button class='button'  type='default' bindtap='add'>留言</button>
-                   
                   </view>
                 <view class='tip' wx:if='{{msgData.length==0}}'>暂无留言...^_^...</view>
 
-               <!-- 留言列表--------------------------- -->
+               
               <view class='msgnav'>
                 <view class='msglist' wx:for="{{msgData}}" wx:key="{{index}}">
                   <text class='msg'>{{item.msg}}</text>
@@ -57,8 +54,4 @@
             </view>
           </view>
         </view>
-
-      </block>
-    </view>
-  </view>
-</view>
+-->

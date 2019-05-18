@@ -1,0 +1,50 @@
+<block>
+  <view class='container' >
+    <view class='container-content'>
+     <!-- <view class='user-info'>
+        <image class='user-head' src='{{item.user.avatarUrl}}' mode='aspectFill'></image>
+        <view class='user-name-time'>
+          <view class='user-name'>{{item.user.nickName}}</view>
+          <view class='user-publish-time'>{{item.date}}</view>
+        </view>  <!--user-name-time
+      </view>   <!--user-info
+      -->
+
+      <view class='content'>
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{title}}</view>
+            <view class="weui-media-box__desc">{{content}}</view>
+            <image src="{{tempFilePaths}}"></image>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{updatedAt}}</view>
+            </view>
+          </view>           
+          
+
+          <!-- 留言--------------------------------- -->
+          <view class='msg_box'>
+            <view class='send_box'>
+             <view>   
+            <image class = wx:if="{{flag}}" src="/images/love2.png"  class="love" bindtap='setlove' ></image>
+            <image wx:else src="/images/love1.png" class="love"  bindtap='setlove' ></image>
+          </view>   
+              <input value='{{inputVal}}' bindinput='changeinputVal' class='input'
+                     type='text' placeholder='请留言...' placeholder-class='pl_input'></input>
+              <button class='button' type='default' bindtap='add'>留言</button>
+              <button class='joinbutton' type='default' bindtap='join' data-grouptitle="{{title}}">加入</button>
+            </view>    <!--send_box-->
+            <view class='tip' wx:if='{{msgData.length==0}}'>暂无留言...^_^...</view>
+          </view>      <!--msg_box-->
+
+          <!-- 留言列表--------------------------- -->
+          <view class='msgnav'>
+            <view class='msglist' wx:for="{{msgData}}" wx:key="{{index}}">
+              <text class='msg'>{{item.msg}}</text>
+              <icon data-index='{{index}}' bindtap='del' class='icon' type='cancel'></icon>
+            </view>     <!--msglist-->
+          </view>     <!--msgnav-->
+        </view>   <!--content-->
+      </view>    <!--container-content-->
+    <view class='container-line'></view>
+  </view>     <!--container-->
+</block>

@@ -5,8 +5,39 @@ const bind = require('../../utils/live-query-binding');
 Page({
   data: {
     title: '',
-    content: ''
+    content: '',
+    tempFilePaths: ''
   },
+
+ chooseimage: function() {
+    var _this = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],// 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'],// 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表
+        _this.setData({
+          tempFilePaths: res.tempFilePaths
+        })
+        var tempFilePath = res.tempFilePaths[0];
+        // 使用本地临时文件的路径构造 AV.File
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        })
+          // 上传
+          .save()
+          // 上传成功
+          .then(file => console.log(file.url()))
+          // 上传发生异常
+          .catch(console.error);
+
+      }
+    })
+  },
+
 
   login: function () {
     return AV.Promise.resolve(AV.User.current())

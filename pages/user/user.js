@@ -7,11 +7,13 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
   mysth: function () {
     wx.navigateTo({
       url: '/pages/mysth/mysth',
     })
   },
+  
   delesth: function () {
     wx.navigateTo({
       url: '/pages/aboutsys/aboutsys',
@@ -29,9 +31,11 @@ Page({
       url: '/pages/userinfo/userinfo',
     })
   },
+
   //事件处理函数
   bindViewTap: function () {
   },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -60,6 +64,7 @@ Page({
       })
     }
   },
+
   getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -67,6 +72,7 @@ Page({
       hasUserInfo: true
     })
   },
+
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
   }
